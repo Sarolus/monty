@@ -7,7 +7,12 @@
 #include <string.h>
 
 /* Macro */
-#define BUFFERSIZE 1024
+#define BUFFER_SIZE 1024
+#define WRONG_USAGE 0
+#define ACCESS_DENIED 1
+#define INVALID_INSTRUCTION 2
+#define ALLOCATION_FAILED 3
+#define WRONG_ARGUMENT 4
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -57,8 +62,10 @@ typedef struct prm_s
 extern prm_t *data;
 
 /* File management functions */
-void fileOpen();
 void fileRead();
+
+/* Error handling functions */
+void errorHandler(int errorID);
 
 /* Parsing management */
 void parsingManager();

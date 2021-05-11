@@ -4,7 +4,7 @@
  * 
  * 
  */
-void push(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void push(stack_t **stack)
 {
 	stack_t *new;
 	stack_t *tmp;

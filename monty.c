@@ -1,5 +1,5 @@
 #include "monty.h"
-token_t *data;
+prm_t *data;
 
 /**
  * 
@@ -8,12 +8,14 @@ token_t *data;
  */
 int main(int argc, char *argv[])
 {
-	data = malloc(sizeof(token_t));
+	data = malloc(sizeof(prm_t));
 
 	if (argc < 2)
 		printf("Error tmp"); /* temporary need error handler */
 
-	fileOpen(argv[1]);
+	data->filename = argv[1];
+
+	fileOpen();
 
 	return (0);
 }

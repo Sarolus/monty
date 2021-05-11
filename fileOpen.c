@@ -5,19 +5,18 @@
  * 
  * 
  */
-void fileOpen(char *filename)
+void fileOpen()
 {
-	FILE *fileDescriptor;
 
 	/* if (filename == NULL) */
 	/* error handler here */
 
-	fileDescriptor = fopen(filename, "r");
+	data->fileDescriptor = fopen(data->filename, "r");
 
 	/* if (fileDescriptor == NULL) */
 	/* error handler here */
 
-	fileRead(fileDescriptor);
+	fileRead();
 
-	fclose(fileDescriptor);
+	fclose(data->fileDescriptor);
 }

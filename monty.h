@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Macro */
+#define BUFFERSIZE 1024
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,7 +36,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack);
 } instruction_t;
 
 /**
@@ -41,27 +44,30 @@ typedef struct instruction_s
  * 
  * 
  */
-typedef struct token_s
+typedef struct prm_s
 {
-	char *opcode;
+	FILE *fileDescriptor;
+	char *filename;
+	char *functionName;
 	char *buffer;
+	unsigned int line_nb;
 	int value;
-} token_t;
+} prm_t;
 
-extern token_t *data;
+extern prm_t *data;
 
 /* File management functions */
-void fileOpen(char *filename);
-void fileRead(FILE *fileDescriptor);
+void fileOpen();
+void fileRead();
 
 /* Parsing management */
-void parsingManager(char *buffer, unsigned int line_number);
+void parsingManager();
 
 /* Function pointer */
-void (*getFunc(token_t *prmTokens))(stack_t **stack, unsigned int line_number);
+void (*getFunc())(stack_t **stack);
 
 /* Stack functions */
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack);
+void pall(stack_t **stack);
 
 #endif /* MONTY_H */

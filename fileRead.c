@@ -5,26 +5,26 @@
  * 
  *
  */
-void fileRead(FILE *fileDescriptor)
+void fileRead()
 {
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack);
 	int line_number = 0;
 	stack_t *stack;
 
 	stack = NULL;
-	data->buffer = malloc(sizeof(char) * 1024);
+	data->buffer = malloc(sizeof(char) * BUFFERSIZE);
 
 	if (data->buffer == NULL)
 		return;
 
-	while (fgets(data->buffer, 1024, fileDescriptor) != NULL)
+	while (fgets(data->buffer, BUFFERSIZE, data->fileDescriptor) != NULL)
 	{
-		parsingManager(data->buffer, line_number);
+		parsingManager();
 
 		/* temporary location need conditions */
-		f = getFunc(data);
+		f = getFunc();
 		if (f != NULL)
-			f(&stack, line_number);
+			f(&stack);
 
 		line_number++;
 	}

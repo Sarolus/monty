@@ -1,6 +1,11 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* Required headers */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,5 +35,33 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * 
+ * 
+ * 
+ */
+typedef struct token_s
+{
+	char *opcode;
+	char *buffer;
+	int value;
+} token_t;
+
+extern token_t *data;
+
+/* File management functions */
+void fileOpen(char *filename);
+void fileRead(FILE *fileDescriptor);
+
+/* Parsing management */
+void parsingManager(char *buffer, unsigned int line_number);
+
+/* Function pointer */
+void (*getFunc(token_t *prmTokens))(stack_t **stack, unsigned int line_number);
+
+/* Stack functions */
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

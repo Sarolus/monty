@@ -21,10 +21,10 @@ void push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 
 	new->n = data->value;
 	new->next = NULL;
+	new->prev = NULL;
 
 	if (*stack == NULL)
 	{
-		new->prev = NULL;
 		*stack = new;
 	}
 	else

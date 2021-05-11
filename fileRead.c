@@ -9,19 +9,22 @@ void fileRead(FILE *fileDescriptor)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
 	int line_number = 0;
-	stack_t **stack;
+	stack_t *stack;
 
 	stack = NULL;
-	data->buffer = malloc(sizeof(char *));
+	data->buffer = malloc(sizeof(char) * 1024);
 
-	while (fgets(data->buffer, line_number, fileDescriptor) != NULL)
+	if (data->buffer == NULL)
+		return;
+
+	while (fgets(data->buffer, 1024, fileDescriptor) != NULL)
 	{
 		parsingManager(data->buffer, line_number);
 
 		/* temporary location need conditions */
 		f = getFunc(data);
 		if (f != NULL)
-			f(stack, line_number);
+			f(&stack, line_number);
 
 		line_number++;
 	}

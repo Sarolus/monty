@@ -6,7 +6,7 @@
  */
 void (*getFunc(token_t *prmTokens))(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	int index;
+	int index = 0;
 
 	instruction_t functions[] = {
 		{"push", push},
@@ -14,11 +14,11 @@ void (*getFunc(token_t *prmTokens))(stack_t **stack, unsigned int line_number __
 		{NULL, NULL}
 	};
 
-	while (functions[index].opcode)
+	while ((functions + index)->opcode)
 	{
-		if (strcmp(prmTokens->opcode, functions[index].opcode) == 0)
+		if (strcmp(prmTokens->opcode, (functions + index)->opcode) == 0)
 		{
-			return (functions[index].f);
+			return ((functions + index)->f);
 		}
 		index++;
 	}

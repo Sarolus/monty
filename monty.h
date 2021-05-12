@@ -14,6 +14,7 @@
 #define INVALID_INSTRUCTION 2
 #define ALLOCATION_FAILED 3
 #define WRONG_ARGUMENT 4
+#define PINT_EMPTY 5
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -79,6 +80,7 @@ void (*getFunc())(stack_t **stack);
 /* Stack functions */
 void push(stack_t **stack);
 void pall(stack_t **stack);
+void pint(stack_t **stack);
 
 /* Memory functions */
 void freeStruct();

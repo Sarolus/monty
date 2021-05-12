@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	initData();
 
-	if (argc < 2)
+	if (argc < 2 || argc > 2)
 		errorHandler(WRONG_USAGE);
 
 	data->filename = argv[1];

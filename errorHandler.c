@@ -24,6 +24,9 @@ void errorHandler(int errorID)
 		case WRONG_ARGUMENT:
 			fprintf(stderr, "L%d: usage: push integer\n", data->line_nb);
 			break;
+		case PINT_EMPTY:
+			fprintf(stderr, "L%d: can't pint, stack empty\n", data->line_nb);
+			break;
 	}
 	freeStruct();
 	exit(EXIT_FAILURE);

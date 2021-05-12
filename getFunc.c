@@ -11,6 +11,7 @@ void (*getFunc())(stack_t **stack)
 	instruction_t functions[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 

@@ -5,17 +5,12 @@ int isnumber(char *n)
 	int i;
 
 	i = 0;
-	while (n[i] != '\0')
+	while (n[i] != '\0' && isdigit(n[i]))
 	{
-		if (isdigit(n[i]))
-		{
-			i++;
-		}
-		else
-		{
-			return (1);
-		}
+		i++;
 	}
-
-	return (0);
+	if (i == _strlen(n) - 1)
+		return (1);
+	else
+		return (0);
 }

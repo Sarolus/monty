@@ -92,5 +92,6 @@ char *_strtok(char *str, char *sep, char **saveptr);
 unsigned int _strspn(char *s1, char *s2);
 unsigned int _strcspn(char *s1, char *s2);
 char *_strchr(char *str, char c);
+int _strlen(char *s);
 
 #endif /* MONTY_H */

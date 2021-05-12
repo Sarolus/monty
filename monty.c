@@ -2,14 +2,16 @@
 prm_t *data;
 
 /**
- * 
- * 
- * 
+ * main - main function that initialize data structure,
+ * open targeted file and call the fileRead function.
+ * @argc: number of arguments.
+ * @argv: argument.
+ * Return: always return 0.
  */
 int main(int argc, char *argv[])
 {
 	initData();
-	
+
 	if (argc < 2 || argc > 2)
 		errorHandler(WRONG_USAGE);
 

@@ -1,13 +1,11 @@
 #include "monty.h"
 
 /**
- * 
- * 
- *
+ * fileRead - Read the opened file and gets the lines of it.
  */
-void fileRead()
+void fileRead(void)
 {
-	void (*f)(stack_t * *stack);
+	void (*f)(stack_t **stack);
 
 	data->buffer = malloc(sizeof(char) * BUFFER_SIZE);
 

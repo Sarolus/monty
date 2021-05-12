@@ -12,8 +12,7 @@ char *_strchr(char *str, char c)
 
 	if (str != NULL)
 	{
-		do
-		{
+		do {
 			if (*str == c)
 			{
 				find = str;

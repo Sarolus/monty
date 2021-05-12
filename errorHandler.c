@@ -1,9 +1,8 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * errorHandler - Handle the different error cases.
+ * @errorID: error ID depending of adequate error case.
  */
 void errorHandler(int errorID)
 {

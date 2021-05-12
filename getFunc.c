@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * 
- * 
+ * getFunc - Check the opcode and return the adequate function.
+ * Return: return the adequate function.
  */
 void (*getFunc())(stack_t **stack)
 {

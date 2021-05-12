@@ -1,11 +1,10 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * parsingManager - manage parsing of the file lines,
+ * building the wanted tokens.
  */
-void parsingManager()
+void parsingManager(void)
 {
 	char *separator, *tmp = NULL;
 

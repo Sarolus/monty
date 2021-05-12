@@ -1,11 +1,9 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
+ * freeStruct - Free all allocated data structure parameters.
  */
-void freeStruct()
+void freeStruct(void)
 {
 	if (data->buffer != NULL)
 		free(data->buffer);

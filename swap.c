@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * 
- * 
+ * swap - swaps the top two elements of the stack.
+ * @stack: head of our stack.
  */
 void swap(stack_t **stack)
 {

@@ -1,6 +1,9 @@
 #include "monty.h"
 
-void initData()
+/**
+ * initData - Initialize data structure.
+ */
+void initData(void)
 {
 	data = malloc(sizeof(prm_t));
 	data->buffer = NULL;

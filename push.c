@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * 
- * 
+ * push - pushes an element to the stack.
+ * @stack: head of our stack.
  */
 void push(stack_t **stack)
 {

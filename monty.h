@@ -67,14 +67,14 @@ typedef struct prm_s
 extern prm_t *data;
 
 /* File management functions */
-void fileRead();
+void fileRead(void);
 
 /* Error handling functions */
 void errorHandler(int errorID);
 int isnumber(char *n);
 
 /* Parsing management */
-void parsingManager();
+void parsingManager(void);
 int emptyLine(char *line);
 
 /* Function pointer */
@@ -88,11 +88,11 @@ void pop(stack_t **stack);
 void swap(stack_t **stack);
 
 /* Memory functions */
-void freeStruct();
+void freeStruct(void);
 void free_list(stack_t *head);
 
 /* Data management */
-void initData();
+void initData(void);
 
 /* String functions */
 char *_strtok(char *str, char *sep, char **saveptr);

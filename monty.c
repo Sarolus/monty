@@ -8,8 +8,10 @@ prm_t *data;
  */
 int main(int argc, char *argv[])
 {
+	argc = 2;
+	argv[1] = "bytecodes/001.m";
 	initData();
-
+	
 	if (argc < 2 || argc > 2)
 		errorHandler(WRONG_USAGE);
 

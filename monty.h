@@ -68,7 +68,7 @@ void fileRead();
 
 /* Error handling functions */
 void errorHandler(int errorID);
-int isnumber(int value);
+int isnumber(char *n);
 
 /* Parsing management */
 void parsingManager();
@@ -86,5 +86,11 @@ void free_list(stack_t *head);
 
 /* Data management */
 void initData();
+
+/* String functions */
+char *_strtok(char *str, char *sep, char **saveptr);
+unsigned int _strspn(char *s1, char *s2);
+unsigned int _strcspn(char *s1, char *s2);
+char *_strchr(char *str, char c);
 
 #endif /* MONTY_H */

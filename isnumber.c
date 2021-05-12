@@ -1,25 +1,20 @@
 #include "monty.h"
 
-/**
- * 
- * 
- */
-int isnumber(int value)
+int isnumber(char *n)
 {
-	int tmp = value;
-	int i = 10;
+	int i;
 
-	while (tmp % i != 0 && i <= value)
+	i = 0;
+	while (n[i] != '\0')
 	{
-		if (isdigit(tmp))
+		if (isdigit(n[i]))
 		{
-			return (0);
+			i++;
 		}
 		else
 		{
 			return (1);
 		}
-		i *= 10;
 	}
 
 	return (0);

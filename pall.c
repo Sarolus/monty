@@ -9,11 +9,16 @@ void pall(stack_t **stack)
 	stack_t *tmp = *stack;
 
 	if (tmp == NULL)
-		exit(EXIT_FAILURE);
+		errorHandler(ALLOCATION_FAILED);
+
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
 
 	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->n);
-		tmp = tmp->next;
+		tmp = tmp->prev;
 	}
 }

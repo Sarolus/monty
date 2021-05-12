@@ -16,7 +16,7 @@ void push(stack_t **stack)
 
 	if (new == NULL)
 	{
-		exit(EXIT_FAILURE);
+		errorHandler(ALLOCATION_FAILED);
 	}
 
 	new->n = data->value;

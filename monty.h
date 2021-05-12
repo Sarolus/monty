@@ -51,6 +51,7 @@ typedef struct instruction_s
  */
 typedef struct prm_s
 {
+	stack_t *stack;
 	FILE *fileDescriptor;
 	char *filename;
 	char *functionName;
@@ -76,5 +77,12 @@ void (*getFunc())(stack_t **stack);
 /* Stack functions */
 void push(stack_t **stack);
 void pall(stack_t **stack);
+
+/* Memory functions */
+void freeStruct();
+void free_list(stack_t *head);
+
+/* Data management */
+void initData();
 
 #endif /* MONTY_H */

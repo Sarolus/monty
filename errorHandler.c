@@ -25,6 +25,6 @@ void errorHandler(int errorID)
 			printf("L%d: usage: push integer", data->line_nb);
 			break;
 	}
-	/* FREE FUNCTION HERE */
+	freeStruct();
 	exit(EXIT_FAILURE);
 }

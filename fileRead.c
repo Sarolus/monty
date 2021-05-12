@@ -8,10 +8,7 @@
 void fileRead()
 {
 	void (*f)(stack_t **stack);
-	int line_number = 0;
-	stack_t *stack;
 
-	stack = NULL;
 	data->buffer = malloc(sizeof(char) * BUFFER_SIZE);
 
 	if (data->buffer == NULL)
@@ -21,12 +18,10 @@ void fileRead()
 	{
 		parsingManager();
 
-		/* temporary location need conditions */
 		f = getFunc();
 		if (f != NULL)
-			f(&stack);
-
-		line_number++;
+			f(&data->stack);
+		data->line_nb++;
 	}
 
 }

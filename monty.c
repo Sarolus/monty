@@ -8,7 +8,7 @@ prm_t *data;
  */
 int main(int argc, char *argv[])
 {
-	data = malloc(sizeof(prm_t));
+	initData();
 
 	if (argc < 2)
 		errorHandler(WRONG_USAGE);
@@ -25,9 +25,7 @@ int main(int argc, char *argv[])
 
 	fileRead();
 
-	/* FREE FUNCTION HERE, put fclose in it */
-	fclose(data->fileDescriptor);
-
+	freeStruct();
 	exit(EXIT_SUCCESS);
 
 	return (0);

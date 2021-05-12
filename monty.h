@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
+#include <stdarg.h>
 
 /* Macro */
 #define BUFFER_SIZE 1024

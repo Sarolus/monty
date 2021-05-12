@@ -9,8 +9,8 @@ void pall(stack_t **stack)
 {
 	stack_t *tmp = *stack;
 
-	if (tmp == NULL)
-		return;
+	if (tmp == NULL || stack == NULL)
+		exit(EXIT_FAILURE);
 
 	while (tmp->next != NULL)
 	{

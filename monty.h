@@ -16,7 +16,8 @@
 #define WRONG_ARGUMENT 4
 #define PINT_EMPTY 5
 #define POP_EMPTY 6
-#define ELEMENTS_REQUIRED 7
+#define SWAP_ELEMENTS 7
+#define ADD_ELEMENTS 8
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -71,6 +72,7 @@ void fileRead(void);
 
 /* Error handling functions */
 void errorHandler(int errorID);
+void errorHandler2(int errorID);
 int isnumber(char *n);
 
 /* Parsing management */
@@ -86,6 +88,8 @@ void pall(stack_t **stack);
 void pint(stack_t **stack);
 void pop(stack_t **stack);
 void swap(stack_t **stack);
+void add(stack_t **stack);
+void nop(stack_t **stack);
 
 /* Memory functions */
 void freeStruct(void);

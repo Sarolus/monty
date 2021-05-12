@@ -10,7 +10,7 @@ void swap(stack_t **stack)
 	stack_t *new;
 
 	if (data->line_nb < 2)
-		errorHandler(ELEMENTS_REQUIRED);
+		errorHandler(SWAP_ELEMENTS);
 
 	tmp = *stack;
 	new = (*stack)->next;

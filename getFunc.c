@@ -21,6 +21,8 @@ void (*getFunc())(stack_t **stack)
 		{
 			return ((functions + index)->f);
 		}
+		else
+			errorHandler(INVALID_INSTRUCTION);
 		index++;
 	}
 

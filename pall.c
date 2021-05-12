@@ -10,7 +10,7 @@ void pall(stack_t **stack)
 	stack_t *tmp = *stack;
 
 	if (tmp == NULL || stack == NULL)
-		exit(EXIT_FAILURE);
+		return;
 
 	while (tmp->next != NULL)
 	{

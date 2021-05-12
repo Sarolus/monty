@@ -16,6 +16,7 @@
 #define WRONG_ARGUMENT 4
 #define PINT_EMPTY 5
 #define POP_EMPTY 6
+#define ELEMENTS_REQUIRED 7
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -84,6 +85,7 @@ void push(stack_t **stack);
 void pall(stack_t **stack);
 void pint(stack_t **stack);
 void pop(stack_t **stack);
+void swap(stack_t **stack);
 
 /* Memory functions */
 void freeStruct();

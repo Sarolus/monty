@@ -30,6 +30,9 @@ void errorHandler(int errorID)
 		case POP_EMPTY:
 			fprintf(stderr, "L%d: can't pop an empty stack\n", data->line_nb);
 			break;
+		case ELEMENTS_REQUIRED:
+			fprintf(stderr, "L%d: can't swap, stack too short\n", data->line_nb);
+			break;
 	}
 	freeStruct();
 	exit(EXIT_FAILURE);

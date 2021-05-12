@@ -7,10 +7,8 @@
 void push(stack_t **stack)
 {
 	stack_t *new;
-	stack_t *tmp;
 
 	new = NULL;
-	tmp = *stack;
 
 	new = malloc(sizeof(stack_t));
 
@@ -18,20 +16,17 @@ void push(stack_t **stack)
 		errorHandler(ALLOCATION_FAILED);
 
 	new->n = data->value;
-	new->next = NULL;
-	new->prev = NULL;
 
 	if (*stack == NULL)
 	{
+		new->next = *stack;
+		new->prev = NULL;
 		*stack = new;
+		return;
 	}
-	else
-	{
-		while (tmp->next != NULL)
-		{
-			tmp = tmp->next;
-		}
-		new->prev = tmp;
-		tmp->next = new;
-	}
+
+	new->next = *stack;
+	new->prev = NULL;
+	(*stack)->prev = new;
+	*stack = new;
 }

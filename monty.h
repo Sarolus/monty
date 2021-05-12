@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /* Macro */
 #define BUFFER_SIZE 1024
@@ -67,6 +68,7 @@ void fileRead();
 
 /* Error handling functions */
 void errorHandler(int errorID);
+int isnumber(int value);
 
 /* Parsing management */
 void parsingManager();

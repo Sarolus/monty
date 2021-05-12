@@ -19,10 +19,10 @@ void errorHandler(int errorID)
 			printf("L%d: unknow instruction %s\n", data->line_nb, data->functionName);
 			break;
 		case ALLOCATION_FAILED:
-			printf("Error: malloc failed");
+			printf("Error: malloc failed\n");
 			break;
 		case WRONG_ARGUMENT:
-			printf("L%d: usage: push integer", data->line_nb);
+			printf("L%d: usage: push integer\n", data->line_nb);
 			break;
 	}
 	freeStruct();

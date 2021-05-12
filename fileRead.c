@@ -23,6 +23,8 @@ void fileRead()
 			f = getFunc();
 			if (f != NULL)
 				f(&data->stack);
+			else
+				errorHandler(INVALID_INSTRUCTION);
 		}
 		data->line_nb++;
 	}

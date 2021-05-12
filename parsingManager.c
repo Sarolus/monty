@@ -11,9 +11,6 @@ void parsingManager()
 
 	separator = "\n\t ";
 
-	if (data->buffer == NULL)
-		errorHandler(ALLOCATION_FAILED);
-
 	data->functionName = strtok(data->buffer, separator);
 
 	if (data->functionName == NULL)

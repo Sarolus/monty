@@ -14,6 +14,9 @@ void push(stack_t **stack)
 
 	new = malloc(sizeof(stack_t));
 
+	if (new == NULL)
+		errorHandler(ALLOCATION_FAILED);
+
 	new->n = data->value;
 	new->next = NULL;
 	new->prev = NULL;

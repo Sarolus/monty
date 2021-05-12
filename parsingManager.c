@@ -7,12 +7,9 @@
  */
 void parsingManager()
 {
-	char *saveptr, *separator, *tmp;
+	char *saveptr, *separator;
 
 	separator = "\n\t ";
-
-	tmp = malloc(sizeof(char));
-	tmp = NULL;
 
 	if (data->buffer == NULL)
 		errorHandler(ALLOCATION_FAILED);
@@ -23,13 +20,5 @@ void parsingManager()
 		errorHandler(INVALID_INSTRUCTION);
 
 	if (strcmp(data->functionName, "push") == 0)
-		tmp = _strtok(NULL, separator, &saveptr);
-
-	printf("%s\n", tmp);
-	if (isnumber(tmp) != 0 /* || (tmp[0] == '-' && isnumber((tmp + 1)) != 0) */)
-	{
-		errorHandler(WRONG_ARGUMENT);
-	}
-	
-	data->value = atoi(tmp);
+		data->value = atoi(_strtok(NULL, separator, &saveptr));
 }

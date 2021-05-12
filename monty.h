@@ -73,6 +73,7 @@ int isnumber(char *n);
 
 /* Parsing management */
 void parsingManager();
+int emptyLine(char *line);
 
 /* Function pointer */
 void (*getFunc())(stack_t **stack);

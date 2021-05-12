@@ -7,7 +7,7 @@
  */
 void fileRead()
 {
-	void (*f)(stack_t **stack);
+	void (*f)(stack_t * *stack);
 
 	data->buffer = malloc(sizeof(char) * BUFFER_SIZE);
 
@@ -16,12 +16,14 @@ void fileRead()
 
 	while (fgets(data->buffer, BUFFER_SIZE, data->fileDescriptor) != NULL)
 	{
-		parsingManager();
+		if (emptyLine(data->buffer) != 0)
+		{
+			parsingManager();
 
-		f = getFunc();
-		if (f != NULL)
-			f(&data->stack);
+			f = getFunc();
+			if (f != NULL)
+				f(&data->stack);
+		}
 		data->line_nb++;
 	}
-
 }

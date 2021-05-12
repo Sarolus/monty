@@ -7,18 +7,27 @@
  */
 void parsingManager()
 {
-	char *saveptr, *separator;
+	char *separator, *tmp = NULL;
 
 	separator = "\n\t ";
 
 	if (data->buffer == NULL)
 		errorHandler(ALLOCATION_FAILED);
 
-	data->functionName = _strtok(data->buffer, separator, &saveptr);
+	data->functionName = strtok(data->buffer, separator);
 
 	if (data->functionName == NULL)
 		errorHandler(INVALID_INSTRUCTION);
 
 	if (strcmp(data->functionName, "push") == 0)
-		data->value = atoi(_strtok(NULL, separator, &saveptr));
+	{
+		tmp = strtok(NULL, separator);
+
+		if (tmp == NULL)
+			errorHandler(WRONG_ARGUMENT);
+		if (isnumber(tmp) == 0)
+			errorHandler(WRONG_ARGUMENT);
+
+		data->value = atoi(tmp);
+	}
 }

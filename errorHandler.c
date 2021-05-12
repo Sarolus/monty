@@ -16,7 +16,7 @@ void errorHandler(int errorID)
 			fprintf(stderr, "Error: Can't open file %s\n", data->filename);
 			break;
 		case INVALID_INSTRUCTION:
-			fprintf(stderr, "L%d: unknow instruction %s\n", data->line_nb, data->functionName);
+			fprintf(stderr, "L%d: unknown instruction %s\n", data->line_nb, data->functionName);
 			break;
 		case ALLOCATION_FAILED:
 			fprintf(stderr, "Error: malloc failed\n");

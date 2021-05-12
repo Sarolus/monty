@@ -21,8 +21,10 @@ void (*getFunc())(stack_t **stack)
 		{
 			return ((functions + index)->f);
 		}
-		else
+		else if (strcmp(data->functionName, (functions + index)->opcode) != 0)
+		{
 			errorHandler(INVALID_INSTRUCTION);
+		}
 		index++;
 	}
 

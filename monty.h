@@ -15,6 +15,7 @@
 #define ALLOCATION_FAILED 3
 #define WRONG_ARGUMENT 4
 #define PINT_EMPTY 5
+#define POP_EMPTY 6
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -56,7 +57,7 @@ typedef struct prm_s
 	stack_t *stack;
 	FILE *fileDescriptor;
 	char *filename;
-	char *functionName;
+	char *name;
 	char *buffer;
 	unsigned int line_nb;
 	int value;
@@ -82,6 +83,7 @@ void (*getFunc())(stack_t **stack);
 void push(stack_t **stack);
 void pall(stack_t **stack);
 void pint(stack_t **stack);
+void pop(stack_t **stack);
 
 /* Memory functions */
 void freeStruct();

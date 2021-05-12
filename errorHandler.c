@@ -16,7 +16,7 @@ void errorHandler(int errorID)
 			fprintf(stderr, "Error: Can't open file %s\n", data->filename);
 			break;
 		case INVALID_INSTRUCTION:
-			fprintf(stderr, "L%d: unknown instruction %s\n", data->line_nb, data->functionName);
+			fprintf(stderr, "L%d: unknown instruction %s\n", data->line_nb, data->name);
 			break;
 		case ALLOCATION_FAILED:
 			fprintf(stderr, "Error: malloc failed\n");
@@ -26,6 +26,9 @@ void errorHandler(int errorID)
 			break;
 		case PINT_EMPTY:
 			fprintf(stderr, "L%d: can't pint, stack empty\n", data->line_nb);
+			break;
+		case POP_EMPTY:
+			fprintf(stderr, "L%d: can't pop an empty stack\n", data->line_nb);
 			break;
 	}
 	freeStruct();

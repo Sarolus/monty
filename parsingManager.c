@@ -11,12 +11,12 @@ void parsingManager()
 
 	separator = "\n\t ";
 
-	data->functionName = strtok(data->buffer, separator);
+	data->name = strtok(data->buffer, separator);
 
-	if (data->functionName == NULL)
+	if (data->name == NULL)
 		errorHandler(INVALID_INSTRUCTION);
 
-	if (strcmp(data->functionName, "push") == 0)
+	if (strcmp(data->name, "push") == 0)
 	{
 		tmp = strtok(NULL, separator);
 

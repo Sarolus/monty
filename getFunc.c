@@ -12,12 +12,13 @@ void (*getFunc())(stack_t **stack)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
 	while ((functions + index)->opcode)
 	{
-		if (strcmp(data->functionName, (functions + index)->opcode) == 0)
+		if (strcmp(data->name, (functions + index)->opcode) == 0)
 		{
 			return ((functions + index)->f);
 		}
